@@ -1,0 +1,29 @@
+.hello{
+    margin-left: 110px;
+    color: red;
+  }
+  .payment{
+    color: red;
+    font-size: 20px;
+    margin-left: 27rem;
+    margin-top:  8rem;
+  }
+  li{
+    color: black;
+  }
+  .btn{
+    margin-left: 44rem;
+    display: flex;
+    justify-content: center;
+  }
+  a{
+    margin-left: 44rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-style: solid;
+    background-color: rgb(116, 165, 107);
+    padding: 1rem;
+
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+  }

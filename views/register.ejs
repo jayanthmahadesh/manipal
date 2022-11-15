@@ -1,0 +1,67 @@
+<% layout('Layouts/boilerplate') %>
+<div class="d-flex justify-content-center align-items-center">
+  <div class=" border rounded p-2 w-50 h-50">
+
+      <h3>
+          <div class="alert alert-danger" role="alert">Register Here</div>
+      </h3>
+
+      <form action="/register" method="POST">
+          <div class="form-group m-1">
+              <label class="form-label" for="username"><b>Hospital Name</b></label>
+              <input class="form-control-sm form-control" id="" value="" name="username" placeholder="" type="text"/>
+          </div>
+          <div class="form-group m-1">
+            <label class="form-label" for="hospitalLocation"><b>Hospital Location</b></label>
+            
+            <input class="form-control-sm form-control" id="pac-input" value="" name="address" placeholder="" type="text"/>
+          </div>
+          <div class="form-group m-1">
+            <label class="form-label" for="city"><b>City</b></label>
+            
+            <input class="form-control-sm form-control" id="pac-input" value="" name="cityName" placeholder="" type="text"/>
+          </div>
+          <!-- latitudeandlogitudestart -->
+          <div class="form-group m-1">
+            <!-- <label class="form-label" for="hospitalLocation"><b>Hospital Location</b></label> -->
+          </div>
+          <!-- latitudeandlogitudeend -->
+          <!-- gettinglongituestart -->
+          <div class="form-group m-1">
+            <input type="hidden" class="form-control-sm form-control" id="lat" value="" name="latitude" placeholder="" type="text"/>
+        </div><div class="form-group m-1">
+            <input type="hidden" class="form-control-sm form-control" id="long" value="" name="longitude" placeholder="" type="text"/>
+        </div>
+   <!-- gettinglongituestart -->
+          <div class="form-group m-1">
+              <label class="form-label" for="uniqueID"><b>Unique-ID</b></label>
+              <input class="form-control-sm form-control" id="" value="" name="uniqueID" placeholder="" type="text"/>
+          </div>
+
+          <div class="form-group m-1">
+              <label class="form-label" for="contact"><b>Contact Number</b></label>
+              <input class="form-control-sm form-control" id="" value="" name="contact" placeholder="" type="number"/>
+          </div>
+
+
+          <div class="form-group m-1">
+              <label class="form-label" for="email"><b>Email</b></label>
+              <input required class="form-control-sm form-control" id="" value="" name="email" placeholder="example@gmail.com" type="email"/>
+          </div>
+
+          <div class="form-group m-1">
+              <label class="form-label" for="password"><b>Password</b></label>
+              <input class="form-control-sm form-control" id="" name="password" placeholder="*******" type="password"/>
+          </div>
+
+          <div class="row-5">
+            <button type="submit" class="btn btn-primary" name="user">Register as user</button>
+            <button type="submit" class="btn btn-primary" name="donor">Register as donor</button>
+            <a href="/home" style="text-decoration: none;border-style: solid;padding-left: 1rem;color: black;padding-right: 1rem;padding: 0.4rem;border-radius: 5px;background-color: rgb(65, 106, 255);color: white;">back</a>
+          </div>
+
+      </form>
+
+  </div>
+
+</div>

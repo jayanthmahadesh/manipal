@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- <link rel="stylesheet" href="./styles.css"> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+
+body {
+  background-image: url(/assets/images/backgroundimage.jpeg);
+  font-family: sans-serif;
+}
+
+.container {
+  width: 50%;
+
+  float: left;
+  box-sizing: border-box;
+
+}
+.heading {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+.row {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+}
+
+.card {
+  width: 40%;
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-bottom: 7px;
+  transition: 0.3s;
+  margin-left:10px;
+
+  padding: 15px;
+
+}
+
+.card-header {
+  text-align: center;
+  padding: 50px 10px;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  color: #fff;
+}
+
+.card-body {
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+
+
+button{
+  position: relative;
+  left: 30%;
+  top: 0.8rem;
+  width: 6rem;
+   height: 3rem;
+   border-radius: 5px;
+   font-size: 1.1rem;
+
+}
+button:hover{
+  cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+  .card {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .container {
+    width: 100%;
+  }
+
+  .heading {
+    padding: 20px;
+    font-size: 20px;
+  }
+
+  .card {
+    width: 80%;
+  }
+}
+.managemap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#map{
+ 
+  width: 50%;
+  height: 50vh;
+  /* background-color: black; */
+}
+
+/* .dummy
+{
+  height: 100vh;
+  width: 100%;
+} */
+.container2{
+  position: absolute;
+  top: 48%;
+  margin-top: -1rem;
+  z-index: -1;
+}
+#one{
+  height: 13rem;
+}
+#four{
+  height: 13rem;
+}
+</style>
+<body>
+   <div class="container">
+  <div class="row">
+
+  <div class="card">
+    <div class="cardheader">
+      <img id="one" src="/assets/images/final1.jpg" alt="Avatar" style="width:100%">
+      <div class="cardbody">
+        <form action="/home" method="post">
+          <button type="submit">Explore dashboard</button>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+  <div class="card">
+    <div class="cardheader">
+      <img src="/assets/images/final2.jpeg" alt="Avatar" style="width:100%">
+      <div class="cardbody">
+        <form action="/pendingReq" method="post">
+          <button type="submit">Pending request</button>
+        </form>
+     
+      </div>
+      
+    </div>
+  </div>
+  
+
+  
+</div>
+</div> 
+<div class="container container2">
+  <div class="row">
+
+  <div class="card">
+    <div class="cardheader">
+      <img src="/assets/images/final3.png" alt="Avatar" style="width:100%">
+      <div class="cardbody">
+<form action="/donor" method="post">
+  <button type="submit">Update inventory</button>
+</form>
+ 
+      </div>
+      
+    </div>
+  </div>
+
+  
+
+  
+</div>
+</div> 
+
+</body>
+</html>

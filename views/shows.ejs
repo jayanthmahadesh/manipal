@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="/css/showpagestyles.css"/>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+    <title>Vamos</title>
+  </head>
+  <body>
+
+    <div class="container">
+        <%listOfHospitals.forEach(function(hospital){%>
+        <form method="post" action="/order">
+        <!-- <div class="row"> -->
+            
+            <div class="card">
+              <div class="cardheader">
+
+              <img src="/assets/images/im5.jpg" alt="Avatar" style="width:100%">
+            <div class="cardbody">
+              <div class="Hospital-Name one" >
+                <label for="">Hospital Name :</label>
+                <input type="text" name="hospitalName" value="<%= hospital.name %>" >
+              </div>
+              <div class="one">
+              <label for="">Equipment Name :</label>
+                <input type="text" name="equipmentName" value="<%=nameOfEquipment%>" >
+              </div>
+              <div class="Cost one" >
+                <label for="">Rental Cost :</label>
+                <input type="text" name="equipmentCost" value="<%= hospital.cost %>" >
+              </div>
+              <div class="one">
+                <label for="">Hospital Location :</label>
+                <input type="text" name="hospitalLocation" value="<%= hospital.location %>" >
+                </div>
+                <%if(hospital.distance){%>
+                    <div class="one">
+                      <label for="">Distance (km) :</label>
+                        <input type="text" name="distance" value="<%= hospital.distance %>" >
+                        </div>
+                <%}%>
+                <%if(hospital.rating){%>
+                <div class="one">
+                  <label for="">Hospital Rating :</label>
+                    <input type="text" name="rating" value="<%=hospital.rating %>" placeholder=<%=hospital.rating%>>
+                    </div>
+                  <%}%> 
+                <div class="one">
+                  <label for="">Quantity Required :</label>
+                    <input type="text" name="equipmentrequired" value="<%=quantity %>" >
+                    </div>  
+              <div class="one">
+                <label for="">Quantity Available :</label>
+                <input type="text" name="equipmentQuantity" value="<%= hospital.quantity %>" >
+                </div>
+                <div class="one">
+                  <label for="">Due Date:</label>
+                  <input type="date" name="date" value="<%=date %>" placeholder="<%=date%>">
+                  </div>
+              <div class="exbutton">
+              <button type="submit" class="btn btn-primary">Select</button>
+              </div>
+            </div>
+          </div>
+        <!-- </div> -->
+    
+   
+    </div>
+</form>
+<%});%>
+</div>
+    <!-- <div class="managemap">
+
+      <div id="map"></div>
+    </div> -->
+    <script>
+
+      mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zZXBoMTQwOSIsImEiOiJjbDk1OG1tZGYwMnRsM29xamFhYWNhcGd1In0.512h7J7hi5LOqcThdHg8zQ';
+      
+      const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/light-v10',
+        center: [77.5946,12.9716],
+        zoom: 7
+      });
+      
+      const geojson = {
+        type: 'FeatureCollection',
+        features: [
+          {
+            type: 'Feature',
+            geometry: {
+              type: 'Point',
+              coordinates: [77.5946,12.9716]
+            },
+            properties: {
+              title: 'Mapbox',
+              description: 'Washington, D.C.'
+            }
+          }
+          
+        ]
+      };
+      for(var i=0;i<hospitalCoordinates.length;i++){
+        features.push({
+          type:'Feature',
+          geometry:{
+            type:'Point',
+            coordinates:[77.5941,12.9712]
+            // coordinates:[hospitalCoordinates[i].lng,hospitalCoordinates[i].lat]
+          },
+          properties:{
+            title:'Mapbox',
+            description:"yes"
+          }
+        });
+      }
+      // geojason
+      
+      // code from the next step will go here!
+      for (const feature of geojson.features) {
+        // create a HTML element for each feature
+        const el = document.createElement('div');
+        el.className = 'marker';
+      
+        // make a marker for each feature and add to the map
+        new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map);
+      }
+      </script>
+  </body>
+</html>
+

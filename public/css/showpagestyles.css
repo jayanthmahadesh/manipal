@@ -1,0 +1,112 @@
+
+
+body {
+    background-image: linear-gradient(to right, rgb(184, 239, 246),rgb(155, 220, 255),rgb(171, 192, 255));
+    font-family: sans-serif;
+  }
+
+
+  .marker {
+     background-image: url('/assets/images/marker.png');
+     background-size: cover;
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     cursor: pointer;
+  }
+  .container {
+    /* width: 100vw; */
+    /* margin: 50px auto; */
+    /* box-sizing: border-box; */
+    /* line-height: 2rem; */
+    display:flex;
+    flex-flow:row nowrap;
+    align-content: space-between;
+  }
+  h3{
+    display: block;
+  }
+  .one{
+    display: block;
+  }
+  .heading {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 50px;
+  }
+  
+
+  
+  .card {
+    width: auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 50px;
+    transition: 0.3s;
+    margin-left:10px;
+    margin-right: 10px;
+    padding: 15px;
+  }
+  
+  .card-header {
+    text-align: center;
+    padding: 50px 10px;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    color: #fff;
+  }
+  
+  .card-body {
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+  }
+  
+  @media screen and (max-width: 1000px) {
+    .card {
+      width: 40%;
+    }
+  }
+  
+  @media screen and (max-width: 620px) {
+    .container {
+      width: 100%;
+    }
+  
+    .heading {
+      padding: 20px;
+      font-size: 20px;
+    }
+  
+    .card {
+      width: 80%;
+    }
+  }
+  .managemap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #map{
+   
+    width: 50%;
+    height: 50vh;
+    /* background-color: black; */
+  }
+  /* .fm{
+    display:inline;
+    margin:0;
+    display:flex;
+    flex-direction: row-reverse;
+  } */
+  /* .dummy
+  {
+    height: 100vh;
+    width: 100%;
+  } */
